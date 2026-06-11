@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Informações do Pet - Emma Pet Care</title>
+    <title>Pet Information Form - Emma Pet Care</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        // Cores personalizadas
+                        // Custom colors
                         sec: '#dce0ed', 
                         secDark: '#c5ccdf',
                         primLight: '#8688a1', 
@@ -36,59 +36,59 @@
             <h1 class="text-3xl font-bold flex items-center justify-center gap-3">
                 Emma Pet Care <span class="text-4xl">🐾</span>
             </h1>
-            <p class="mt-2 text-sec text-lg">Ficha de Informações do Pet</p>
-            <p class="text-sm mt-1 text-sec opacity-90">Por favor, preencha os detalhes abaixo para que possamos cuidar do seu melhor amigo da melhor forma possível!</p>
+            <p class="mt-2 text-sec text-lg">Pet Information Sheet</p>
+            <p class="text-sm mt-1 text-sec opacity-90">Please fill out the details below so we can take the best possible care of your best friend!</p>
         </div>
 
-        <!-- 👇 SUBSTITUIR O E-MAIL AQUI 👇 -->
+        <!-- 👇 REPLACE THE EMAIL BELOW 👇 -->
         <form action="https://formsubmit.co/emma.araujous@gmail.com" method="POST" class="p-6 md:p-10 space-y-8">
             
-            <!-- Configurações do FormSubmit -->
-            <input type="hidden" name="_subject" value="Nova Ficha de Pet Preenchida! 🐾">
+            <!-- FormSubmit Configurations -->
+            <input type="hidden" name="_subject" value="New Pet Information Sheet Filled! 🐾">
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_template" value="table">
             
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2">
-                    📋 Informações Básicas
+                    📋 Basic Information
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">Nome do Cão</label>
-                        <input type="text" name="Nome do Cão" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Jax">
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Dog Name</label>
+                        <input type="text" name="Dog Name" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Jax">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">Nome do Tutor</label>
-                        <input type="text" name="Nome do Tutor" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Winnie / Pierre">
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Owner Name</label>
+                        <input type="text" name="Owner Name" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Winnie / Pierre">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">Datas da Estadia</label>
-                        <input type="text" name="Datas da Estadia" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: 26/05/2026 – 07/06/2026">
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Dates of Stay</label>
+                        <input type="text" name="Dates of Stay" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: 5/26/26 – 6/7/26">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">Telemóvel do Tutor</label>
-                        <input type="tel" name="Telemóvel" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="(00) 00000-0000">
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Owner Phone</label>
+                        <input type="tel" name="Owner Phone" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="(305) 555-0000">
                     </div>
                 </div>
             </section>
 
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2">
-                    🥣 Rotina de Alimentação
+                    🥣 Feeding Routine
                 </h2>
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">O que o cão come e quando?</label>
-                        <textarea name="Rotina de Alimentação" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all resize-y" placeholder="Ex: Pequeno-almoço entre as 6:00 e 7:00 (comida racionada)..."></textarea>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">What does the dog eat and when?</label>
+                        <textarea name="Feeding Routine" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all resize-y" placeholder="Ex: Breakfast between 6:00am - 7:00am (pre-portioned food)..."></textarea>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Tem alguma alergia ou sensibilidade alimentar?</label>
-                            <input type="text" name="Alergias Alimentares" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Se não, escreva 'Nenhuma'">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Does he/she have any food allergies or sensitivities?</label>
+                            <input type="text" name="Food Allergies" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="If none, write 'None'">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Existem alimentos que ele NÃO deve comer?</label>
-                            <input type="text" name="Alimentos Proibidos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Uvas, chocolate, etc.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Are there any foods he/she should NOT have?</label>
+                            <input type="text" name="Forbidden Foods" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Grapes, chocolate, etc.">
                         </div>
                     </div>
                 </div>
@@ -96,27 +96,27 @@
 
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2">
-                    🚽 Rotina de Fisiologia
+                    🚽 Potty Routine
                 </h2>
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">Qual é a rotina para ir à rua (horários)?</label>
-                        <textarea name="Horários de Rua" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: De manhã cedo (6h), à tarde (14h) e antes de dormir (21h)."></textarea>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">What is the potty schedule?</label>
+                        <textarea name="Potty Schedule" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Morning around 6:00am, midday, and before bed around 9:00pm."></textarea>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">Como é que ele avisa que precisa de ir à rua?</label>
-                        <input type="text" name="Sinal para Ir à Rua" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Senta-se à porta e chora.">
+                        <label class="block text-sm font-medium text-slate-700 mb-1">How does he/she let you know they need to go out?</label>
+                        <input type="text" name="Potty Signal" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Sits by the door and whines.">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Ele é totalmente treinado para fazer as necessidades na rua?</label>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Is he/she fully house trained?</label>
                         <div class="flex gap-6">
                             <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="radio" name="Treinado" value="Sim" class="w-4 h-4 text-prim focus:ring-prim" required>
-                                <span>Sim</span>
+                                <input type="radio" name="House Trained" value="Yes" class="w-4 h-4 text-prim focus:ring-prim" required>
+                                <span>Yes</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="radio" name="Treinado" value="Não" class="w-4 h-4 text-prim focus:ring-prim">
-                                <span>Não</span>
+                                <input type="radio" name="House Trained" value="No" class="w-4 h-4 text-prim focus:ring-prim">
+                                <span>No</span>
                             </label>
                         </div>
                     </div>
@@ -125,39 +125,39 @@
 
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2">
-                    ⚕️ Medicamentos e Saúde
+                    ⚕️ Medications & Health
                 </h2>
                 <div class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Toma alguma medicação ou suplemento?</label>
-                            <input type="text" name="Medicamentos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Sim, comprimido X de manhã.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Does he/she take any medications or supplements?</label>
+                            <input type="text" name="Medications" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Yes, pill X in the morning.">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Alguma preocupação médica que eu deva saber?</label>
-                            <input type="text" name="Preocupações Médicas" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Problemas nas articulações.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Any medical concerns I should know about?</label>
+                            <input type="text" name="Medical Concerns" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Joint issues.">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Nome do Veterinário(a)</label>
-                            <input type="text" name="Nome do Veterinário" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Northlake Animal Hospital">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Veterinarian Name</label>
+                            <input type="text" name="Veterinarian Name" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Northlake Animal Hospital">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Contacto do Veterinário(a)</label>
-                            <input type="tel" name="Contacto do Veterinário" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="(00) 00000-0000">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Veterinarian Phone Number</label>
+                            <input type="tel" name="Veterinarian Phone" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="(561) 848-4391">
                         </div>
                     </div>
                     <div class="bg-amber-50 p-4 rounded-lg border border-amber-200 mt-2">
-                        <label class="block text-sm font-semibold text-amber-900 mb-2">Em caso de emergência, autoriza o tratamento veterinário?</label>
+                        <label class="block text-sm font-semibold text-amber-900 mb-2">In case of emergency, do you authorize veterinary treatment?</label>
                         <div class="flex gap-6">
                             <label class="flex items-center gap-2 cursor-pointer text-amber-900">
-                                <input type="radio" name="Autoriza Tratamento" value="Sim" class="w-4 h-4 text-amber-600 focus:ring-amber-500" required>
-                                <span>Sim, autorizo e peço contacto imediato.</span>
+                                <input type="radio" name="Authorize Treatment" value="Yes" class="w-4 h-4 text-amber-600 focus:ring-amber-500" required>
+                                <span>Yes, I authorize it and please contact me immediately.</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer text-amber-900">
-                                <input type="radio" name="Autoriza Tratamento" value="Não" class="w-4 h-4 text-amber-600 focus:ring-amber-500">
-                                <span>Não.</span>
+                                <input type="radio" name="Authorize Treatment" value="No" class="w-4 h-4 text-amber-600 focus:ring-amber-500">
+                                <span>No.</span>
                             </label>
                         </div>
                     </div>
@@ -166,31 +166,31 @@
 
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2">
-                    🦮 Passeios e Comportamento
+                    🦮 Walks & Behavior
                 </h2>
                 <div class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Com que frequência costuma passear?</label>
-                            <input type="text" name="Frequência de Passeios" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: 2x ao dia.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">How often does he/she usually walk?</label>
+                            <input type="text" name="Walk Frequency" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: We have a big yard but he likes to explore.">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Como se comporta na trela?</label>
-                            <input type="text" name="Comportamento na Trela" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Puxa um pouco no início.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Is he/she good on a leash?</label>
+                            <input type="text" name="Leash Behavior" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Yes, pulls a little at first.">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">É sociável com outras pessoas e cães?</label>
-                        <textarea name="Sociabilidade" rows="2" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Late no início, mas depois acalma."></textarea>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Is he/she friendly with other people and dogs?</label>
+                        <textarea name="Sociability" rows="2" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Barks at first, but then calms down after introduction."></textarea>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Quais os comandos que conhece?</label>
-                            <input type="text" name="Comandos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Senta, Fica, Larga...">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">What commands does he/she know?</label>
+                            <input type="text" name="Commands" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Sit, Down, Stay, Leave It...">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Tem medos ou gatilhos?</label>
-                            <input type="text" name="Medos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Aspirador, barulhos altos.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Any fears or triggers?</label>
+                            <input type="text" name="Fears and Triggers" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Vacuum and loud machine noises.">
                         </div>
                     </div>
                 </div>
@@ -198,29 +198,29 @@
 
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2">
-                    ❤️ Conforto e Favoritos
+                    ❤️ Comfort & Favorites
                 </h2>
                 <div class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">Itens de conforto que vai trazer:</label>
-                            <input type="text" name="Itens de Conforto" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Cama, brinquedo favorito.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">What comfort items will you bring?</label>
+                            <input type="text" name="Comfort Items" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Bed, crate, favorite toy.">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1">O que ele mais adora?</label>
-                            <input type="text" name="Coisas Favoritas" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Festas na barriga, brincar à bola.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1">What does he/she love most?</label>
+                            <input type="text" name="Favorite Things" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Ex: Belly rubs, playing fetch outside.">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1">Observações Finais:</label>
-                        <textarea name="Notas Adicionais" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Qualquer outro detalhe importante (ex: Pode chorar um pouco na hora da despedida)."></textarea>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Additional Notes:</label>
+                        <textarea name="Additional Notes" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" placeholder="Any other important details (e.g., He might be a little whiny when dropped off)."></textarea>
                     </div>
                 </div>
             </section>
 
             <div class="pt-4">
                 <button type="submit" class="w-full bg-prim text-white font-bold text-lg py-4 px-6 rounded-xl shadow-lg hover:bg-primDark hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex justify-center items-center gap-2">
-                    <span>Enviar Ficha do Pet</span>
+                    <span>Submit Pet Information</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
                     </svg>
