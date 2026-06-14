@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Informações do Pet - Emma Pet Care</title>
+    <title>Pet Information Form - Emma Pet Care</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -26,7 +26,7 @@
         ::-webkit-scrollbar-thumb { background: #c5ccdf; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #8688a1; }
         
-        .lang-btn { filter: grayscale(100%); opacity: 0.5; transition: all 0.3s ease; }
+        .lang-btn { filter: grayscale(100%); opacity: 0.5; transition: all 0.3s ease; cursor: pointer; }
         .lang-btn.active { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
     </style>
 </head>
@@ -34,90 +34,89 @@
 
     <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden relative">
         
-        <!-- Botões de Idioma -->
+        <!-- Botões de Idioma (Inglês como padrão) -->
         <div class="absolute top-4 right-4 flex gap-3 z-10 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full">
-            <button id="btn-pt" class="lang-btn active text-2xl" onclick="changeLanguage('pt')" title="Português">🇧🇷</button>
-            <button id="btn-en" class="lang-btn text-2xl" onclick="changeLanguage('en')" title="English">🇺🇸</button>
+            <button id="btn-pt" class="lang-btn text-2xl" onclick="changeLanguage('pt')" title="Português">🇧🇷</button>
+            <button id="btn-en" class="lang-btn active text-2xl" onclick="changeLanguage('en')" title="English">🇺🇸</button>
         </div>
 
         <div class="bg-prim p-8 pt-12 text-center text-white">
             <h1 class="text-3xl font-bold flex items-center justify-center gap-3">
                 Emma Pet Care <span class="text-4xl">🐾</span>
             </h1>
-            <p class="mt-2 text-sec text-lg" data-i18n="title">Ficha de Informações do Pet</p>
-            <p class="text-sm mt-1 text-sec opacity-90" data-i18n="subtitle">Por favor, preencha os detalhes abaixo para que possamos cuidar do seu melhor amigo da melhor forma possível!</p>
+            <p class="mt-2 text-sec text-lg" data-i18n="title">Pet Information Sheet</p>
+            <p class="text-sm mt-1 text-sec opacity-90" data-i18n="subtitle">Please fill out the details below so we can take the best possible care of your best friend!</p>
         </div>
 
-        <!-- 👇 SUBSTITUA O E-MAIL ABAIXO 👇 -->
+        <!-- 👇 O LINK DO MAKE.COM FICA AQUI 👇 -->
         <form action="https://hook.us2.make.com/jks5ehkl7qg724v3jubdjx77fjh145jj" method="POST" class="p-6 md:p-10 space-y-8">
             
-            <input type="hidden" name="_subject" value="Nova Ficha de Pet Preenchida! 🐾" data-i18n-val="subject">
-            <input type="hidden" name="_captcha" value="true">
-            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="Assunto do Email" value="New Pet Information Sheet Filled! 🐾" data-i18n-val="subject">
             
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2" data-i18n="sec1">
-                    📋 Informações Básicas
+                    📋 Basic Information
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_dog_name">Nome do Cachorro</label>
-                        <input type="text" data-i18n-name="n_dog_name" name="Nome do Cachorro" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_dog_name" placeholder="Ex: Jax">
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_dog_name">Dog Name</label>
+                        <!-- O atributo 'name' está trancado em Português para o Make funcionar -->
+                        <input type="text" name="Nome do Cachorro" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_dog_name" placeholder="Ex: Jax">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_owner_name">Nome do Tutor</label>
-                        <input type="text" data-i18n-name="n_owner_name" name="Nome do Tutor" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_owner_name" placeholder="Ex: Winnie / Pierre">
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_owner_name">Owner Name</label>
+                        <input type="text" name="Nome do Tutor" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_owner_name" placeholder="Ex: Winnie / Pierre">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_dates">Datas da Estadia</label>
-                        <input type="text" data-i18n-name="n_dates" name="Datas da Estadia" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_dates" placeholder="Ex: 26/05/2026 – 07/06/2026">
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_dates">Dates of Stay</label>
+                        <input type="text" name="Datas da Estadia" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_dates" placeholder="Ex: 05/26/2026 – 06/07/2026">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_phone">Telefone do Tutor</label>
-                        <input type="tel" data-i18n-name="n_phone" name="Telefone do Tutor" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_phone" placeholder="(00) 00000-0000">
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_phone">Owner Phone</label>
+                        <input type="tel" name="Telefone do Tutor" required class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_phone" placeholder="(555) 555-5555">
                     </div>
                 </div>
             </section>
 
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2" data-i18n="sec2">
-                    🥣 Rotina de Alimentação
+                    🥣 Feeding Routine
                 </h2>
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_feed">O que o cachorro come e quando?</label>
-                        <textarea data-i18n-name="n_feed" name="Rotina de Alimentação" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all resize-y" data-i18n-ph="ph_feed" placeholder="Ex: Café da manhã entre as 6:00 e 7:00 (comida racionada)..."></textarea>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_feed">What does the dog eat and when?</label>
+                        <textarea name="Rotina de Alimentação" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all resize-y" data-i18n-ph="ph_feed" placeholder="Ex: Breakfast between 6:00 and 7:00 (pre-portioned food)..."></textarea>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_allergy">Ele(a) tem alguma alergia ou sensibilidade alimentar?</label>
-                        <input type="text" data-i18n-name="n_allergy" name="Alergias Alimentares" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_allergy" placeholder="Se não, escreva 'Nenhuma'">
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_allergy">Does he/she have any food allergies or sensitivities?</label>
+                        <input type="text" name="Alergias Alimentares" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_allergy" placeholder="If none, write 'None'">
                     </div>
                 </div>
             </section>
 
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2" data-i18n="sec3">
-                    🚽 Rotina de Banheiro
+                    🚽 Potty Routine
                 </h2>
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_potty_sched">Qual é a rotina das necessidades?</label>
-                        <textarea data-i18n-name="n_potty_sched" name="Horários de Banheiro" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_potty_sched" placeholder="Ex: De manhã cedo (6h), à tarde (14h) e antes de dormir (21h)."></textarea>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_potty_sched">What is the potty schedule?</label>
+                        <textarea name="Horários de Banheiro" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_potty_sched" placeholder="Ex: Early morning (6am), afternoon (2pm) and before bed (9pm)."></textarea>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_potty_sig">O pet sabe comunicar quando necessita fazer as necessidades?</label>
-                        <input type="text" data-i18n-name="n_potty_sig" name="Sinal para Banheiro" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_potty_sig" placeholder="Ex: Senta perto da porta e chora.">
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_potty_sig">Does the pet know how to communicate when they need to go out?</label>
+                        <input type="text" name="Sinal para Banheiro" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_potty_sig" placeholder="Ex: Sits by the door and whines.">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="q_trained">Ele(a) é totalmente treinado(a) para fazer as necessidades fora de casa?</label>
+                        <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="q_trained">Is he/she fully house trained?</label>
                         <div class="flex gap-6">
                             <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="radio" data-i18n-name="n_trained" name="Treinado" value="Sim" data-i18n-val="v_yes" class="w-4 h-4 text-prim focus:ring-prim" required>
-                                <span data-i18n="opt_yes">Sim</span>
+                                <input type="radio" name="Treinado" value="Yes" data-i18n-val="v_yes" class="w-4 h-4 text-prim focus:ring-prim" required>
+                                <span data-i18n="opt_yes">Yes</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="radio" data-i18n-name="n_trained" name="Treinado" value="Não" data-i18n-val="v_no" class="w-4 h-4 text-prim focus:ring-prim">
-                                <span data-i18n="opt_no">Não</span>
+                                <input type="radio" name="Treinado" value="No" data-i18n-val="v_no" class="w-4 h-4 text-prim focus:ring-prim">
+                                <span data-i18n="opt_no">No</span>
                             </label>
                         </div>
                     </div>
@@ -126,39 +125,39 @@
 
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2" data-i18n="sec4">
-                    ⚕️ Medicamentos e Saúde
+                    ⚕️ Medications & Health
                 </h2>
                 <div class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_meds">Toma alguma medicação ou suplemento?</label>
-                            <input type="text" data-i18n-name="n_meds" name="Medicamentos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_meds" placeholder="Ex: Sim, comprimido X de manhã.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_meds">Does he/she take any medications or supplements?</label>
+                            <input type="text" name="Medicamentos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_meds" placeholder="Ex: Yes, pill X in the morning.">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_health">Alguma preocupação médica que eu deva saber?</label>
-                            <input type="text" data-i18n-name="n_health" name="Preocupações Médicas" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_health" placeholder="Ex: Problemas nas articulações.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_health">Any medical concerns I should know about?</label>
+                            <input type="text" name="Preocupações Médicas" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_health" placeholder="Ex: Joint issues.">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_vet">Nome do Veterinário(a)</label>
-                            <input type="text" data-i18n-name="n_vet" name="Nome do Veterinário" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_vet" placeholder="Ex: Northlake Animal Hospital">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_vet">Veterinarian Name</label>
+                            <input type="text" name="Nome do Veterinário" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_vet" placeholder="Ex: Northlake Animal Hospital">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_vet_phone">Telefone do Veterinário(a)</label>
-                            <input type="tel" data-i18n-name="n_vet_phone" name="Telefone do Veterinário" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_vet_phone" placeholder="(00) 00000-0000">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_vet_phone">Veterinarian Phone</label>
+                            <input type="tel" name="Telefone do Veterinário" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_vet_phone" placeholder="(555) 555-5555">
                         </div>
                     </div>
                     <div class="bg-amber-50 p-4 rounded-lg border border-amber-200 mt-2">
-                        <label class="block text-sm font-semibold text-amber-900 mb-2" data-i18n="q_emerg">Em caso de emergência, você autoriza tratamento veterinário?</label>
+                        <label class="block text-sm font-semibold text-amber-900 mb-2" data-i18n="q_emerg">In case of emergency, do you authorize veterinary treatment?</label>
                         <div class="flex gap-6">
                             <label class="flex items-center gap-2 cursor-pointer text-amber-900">
-                                <input type="radio" data-i18n-name="n_emerg" name="Autoriza Tratamento" value="Sim" data-i18n-val="v_yes" class="w-4 h-4 text-amber-600 focus:ring-amber-500" required>
-                                <span data-i18n="opt_yes_emerg">Sim, autorizo e peço contato imediato.</span>
+                                <input type="radio" name="Autoriza Tratamento" value="Yes" data-i18n-val="v_yes" class="w-4 h-4 text-amber-600 focus:ring-amber-500" required>
+                                <span data-i18n="opt_yes_emerg">Yes, I authorize and please contact me immediately.</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer text-amber-900">
-                                <input type="radio" data-i18n-name="n_emerg" name="Autoriza Tratamento" value="Não" data-i18n-val="v_no" class="w-4 h-4 text-amber-600 focus:ring-amber-500">
-                                <span data-i18n="opt_no">Não.</span>
+                                <input type="radio" name="Autoriza Tratamento" value="No" data-i18n-val="v_no" class="w-4 h-4 text-amber-600 focus:ring-amber-500">
+                                <span data-i18n="opt_no">No.</span>
                             </label>
                         </div>
                     </div>
@@ -167,75 +166,75 @@
 
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2" data-i18n="sec5">
-                    🦮 Passeios e Comportamento
+                    🦮 Walks & Behavior
                 </h2>
                 <div class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_likes_walk">Ele(a) tem o hábito ou gosta de passear/caminhar?</label>
-                            <input type="text" data-i18n-name="n_likes_walk" name="Gosta de Passear" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_likes_walk" placeholder="Ex: Sim, adora caminhar.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_likes_walk">Does he/she have the habit or like to walk?</label>
+                            <input type="text" name="Gosta de Passear" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_likes_walk" placeholder="Ex: Yes, loves to walk.">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_walk_freq">Com que frequência costuma passear?</label>
-                            <input type="text" data-i18n-name="n_walk_freq" name="Frequência de Passeios" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_walk_freq" placeholder="Ex: Temos um quintal grande, mas ele adora explorar.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_walk_freq">How often does he/she usually walk?</label>
+                            <input type="text" name="Frequência de Passeios" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_walk_freq" placeholder="Ex: We have a big yard, but he loves to explore.">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_leash">Como se comporta na coleira/guia?</label>
-                            <input type="text" data-i18n-name="n_leash" name="Comportamento na Coleira" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_leash" placeholder="Ex: Sim, puxa um pouco no início.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_leash">How is his/her behavior on a leash?</label>
+                            <input type="text" name="Comportamento na Coleira" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_leash" placeholder="Ex: Pulls a little at first.">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_dogpark">Pode ser levado(a) ao Dog Park (parque de cães)?</label>
-                            <input type="text" data-i18n-name="n_dogpark" name="Dog Park" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_dogpark" placeholder="Ex: Preferimos que não.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_dogpark">Can he/she be taken to the Dog Park?</label>
+                            <input type="text" name="Dog Park" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_dogpark" placeholder="Ex: We prefer not to.">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_friendly">É sociável com outras pessoas e cães?</label>
-                        <textarea data-i18n-name="n_friendly" name="Sociabilidade" rows="2" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_friendly" placeholder="Ex: Late no início, mas depois acalma."></textarea>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_friendly">Is he/she friendly with other people and dogs?</label>
+                        <textarea name="Sociabilidade" rows="2" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_friendly" placeholder="Ex: Barks at first, but calms down later."></textarea>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_chew">Costuma mastigar sapatos, meias ou outros objetos?</label>
-                            <input type="text" data-i18n-name="n_chew" name="Mastiga Objetos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_chew" placeholder="Ex: Sim, às vezes pega meias.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_chew">Does he/she chew on shoes, socks, or other objects?</label>
+                            <input type="text" name="Mastiga Objetos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_chew" placeholder="Ex: Yes, sometimes grabs socks.">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_cmds">Quais comandos ele(a) conhece?</label>
-                            <input type="text" data-i18n-name="n_cmds" name="Comandos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_cmds" placeholder="Ex: Senta, Deita, Fica, Solta...">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_cmds">What commands does he/she know?</label>
+                            <input type="text" name="Comandos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_cmds" placeholder="Ex: Sit, Down, Stay, Leave it...">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_fear">Tem medos ou gatilhos?</label>
-                        <input type="text" data-i18n-name="n_fear" name="Medos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_fear" placeholder="Ex: Aspirador, barulhos altos.">
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_fear">Any fears or triggers?</label>
+                        <input type="text" name="Medos" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_fear" placeholder="Ex: Vacuum cleaner, loud noises.">
                     </div>
                 </div>
             </section>
 
             <section>
                 <h2 class="text-xl font-semibold text-prim border-b-2 border-sec pb-2 mb-5 flex items-center gap-2" data-i18n="sec6">
-                    ❤️ Conforto e Favoritos
+                    ❤️ Comfort & Favorites
                 </h2>
                 <div class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_items">Quais itens de conforto você vai trazer?</label>
-                            <input type="text" data-i18n-name="n_items" name="Itens de Conforto" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_items" placeholder="Ex: Cama, caixa de transporte, brinquedo favorito.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_items">What comfort items will you bring?</label>
+                            <input type="text" name="Itens de Conforto" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_items" placeholder="Ex: Bed, crate, favorite toy.">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_love">O que ele(a) mais ama?</label>
-                            <input type="text" data-i18n-name="n_love" name="Coisas Favoritas" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_love" placeholder="Ex: Carinho na barriga, brincar de buscar a bola.">
+                            <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_love">What does he/she love most?</label>
+                            <input type="text" name="Coisas Favoritas" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_love" placeholder="Ex: Belly rubs, playing fetch.">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_notes">Observações Finais:</label>
-                        <textarea data-i18n-name="n_notes" name="Notas Adicionais" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_notes" placeholder="Qualquer outro detalhe importante (ex: Pode choramingar um pouco na hora de ir embora)."></textarea>
+                        <label class="block text-sm font-medium text-slate-700 mb-1" data-i18n="q_notes">Additional Notes:</label>
+                        <textarea name="Notas Adicionais" rows="3" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-prim focus:border-prim outline-none transition-all" data-i18n-ph="ph_notes" placeholder="Any other important details (e.g., might whine a little at drop-off)."></textarea>
                     </div>
                 </div>
             </section>
 
             <div class="pt-4">
                 <button type="submit" class="w-full bg-prim text-white font-bold text-lg py-4 px-6 rounded-xl shadow-lg hover:bg-primDark hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex justify-center items-center gap-2">
-                    <span data-i18n="btn_submit">Enviar Ficha do Pet</span>
+                    <span data-i18n="btn_submit">Submit Pet Information</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
                     </svg>
@@ -316,34 +315,7 @@
                 v_yes: "Sim",
                 v_no: "Não",
                 subject: "Nova Ficha de Pet Preenchida! 🐾",
-                btn_submit: "Enviar Ficha do Pet",
-                
-                // Names (Headers da Tabela do E-mail)
-                n_dog_name: "Nome do Cachorro",
-                n_owner_name: "Nome do Tutor",
-                n_dates: "Datas da Estadia",
-                n_phone: "Telefone do Tutor",
-                n_feed: "Rotina de Alimentação",
-                n_allergy: "Alergias Alimentares",
-                n_potty_sched: "Horários de Banheiro",
-                n_potty_sig: "Sinal para Banheiro",
-                n_trained: "Treinado",
-                n_meds: "Medicamentos",
-                n_health: "Preocupações Médicas",
-                n_vet: "Nome do Veterinário",
-                n_vet_phone: "Telefone do Veterinário",
-                n_emerg: "Autoriza Tratamento",
-                n_likes_walk: "Gosta de Passear",
-                n_walk_freq: "Frequência de Passeios",
-                n_leash: "Comportamento na Coleira",
-                n_dogpark: "Dog Park",
-                n_friendly: "Sociabilidade",
-                n_chew: "Mastiga Objetos",
-                n_cmds: "Comandos",
-                n_fear: "Medos",
-                n_items: "Itens de Conforto",
-                n_love: "Coisas Favoritas",
-                n_notes: "Notas Adicionais"
+                btn_submit: "Enviar Ficha do Pet"
             },
             en: {
                 title: "Pet Information Sheet",
@@ -414,34 +386,7 @@
                 v_yes: "Yes",
                 v_no: "No",
                 subject: "New Pet Information Sheet Filled! 🐾",
-                btn_submit: "Submit Pet Information",
-                
-                // Names (Headers da Tabela do E-mail em Inglês)
-                n_dog_name: "Dog Name",
-                n_owner_name: "Owner Name",
-                n_dates: "Dates of Stay",
-                n_phone: "Owner Phone",
-                n_feed: "Feeding Routine",
-                n_allergy: "Food Allergies",
-                n_potty_sched: "Potty Schedule",
-                n_potty_sig: "Potty Signal",
-                n_trained: "House Trained",
-                n_meds: "Medications",
-                n_health: "Medical Concerns",
-                n_vet: "Vet Name",
-                n_vet_phone: "Vet Phone",
-                n_emerg: "Authorizes Treatment",
-                n_likes_walk: "Likes to Walk",
-                n_walk_freq: "Walk Frequency",
-                n_leash: "Leash Behavior",
-                n_dogpark: "Dog Park",
-                n_friendly: "Sociability",
-                n_chew: "Chews Objects",
-                n_cmds: "Commands",
-                n_fear: "Fears",
-                n_items: "Comfort Items",
-                n_love: "Favorite Things",
-                n_notes: "Additional Notes"
+                btn_submit: "Submit Pet Information"
             }
         };
 
@@ -465,16 +410,11 @@
                 if(translations[lang][key]) el.placeholder = translations[lang][key];
             });
 
-            // Traduzir Valores (Value ocultos como o assunto e respostas do rádio)
+            // Traduzir Valores Ocultos (Respostas do rádio)
+            // OBS: Deixei a tradução dos valores do rádio ativa, pois fica bonito no email da Emma chegar 'Yes' em vez de 'Sim'.
             document.querySelectorAll('[data-i18n-val]').forEach(el => {
                 const key = el.getAttribute('data-i18n-val');
                 if(translations[lang][key]) el.value = translations[lang][key];
-            });
-
-            // Traduzir o atributo Name (Para a Emma receber o título das colunas no idioma certo)
-            document.querySelectorAll('[data-i18n-name]').forEach(el => {
-                const key = el.getAttribute('data-i18n-name');
-                if(translations[lang][key]) el.setAttribute('name', translations[lang][key]);
             });
         }
     </script>
